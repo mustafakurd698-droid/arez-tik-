@@ -68,3 +68,16 @@ function comment() {
 
 </body>
 </html>>
+<h2>🎬 Upload Your Video</h2>
+<input type="file" accept="video/*" id="videoFile">
+<video id="preview" controls width="100%"></video>
+
+<script>
+document.getElementById("videoFile").onchange = function() {
+  const file = this.files[0];
+  if (file) {
+    document.getElementById("preview").src =
+      URL.createObjectURL(file);
+  }
+};
+</script>
