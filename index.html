@@ -3,10 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arez Tik</title>
+<title>ArezTik</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+header {
+  background: #181818;
+  padding: 20px;
+  color: #ff2d75;
+  font-size: 30px;
+  font-weight: bold;
+}
+h2 { margin-top: 35px; }
+.video {
+  background: #252525;
+  margin: 20px auto;
+  padding: 35px 15px;
+  max-width: 350px;
+  border-radius: 15px;
+}
+button {
+  background: #ff2d75;
+  color: white;
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin: 8px;
+}
+</style>
 </head>
 <body>
-<h1>Welcome to Arez Tik</h1>
-<p>My first website!</p>
+
+<header>AREZTIK ❤️</header>
+
+<h2>Welcome to ArezTik!</h2>
+<p>Watch and share your videos.</p>
+
+<div class="video">
+  <h2>🎬 My First Video</h2>
+  <p>Welcome to ArezTik</p>
+  <button onclick="like()">❤️ Like <span id="likes">0</span></button>
+  <button onclick="comment()">💬 Comment</button>
+  <p id="comments"></p>
+</div>
+
+<script>
+let likes = 0;
+function like() {
+  likes++;
+  document.getElementById("likes").innerText = likes;
+}
+function comment() {
+  let c = prompt("Write your comment:");
+  if(c) document.getElementById("comments").innerText += c + " ❤️ ";
+}
+</script>
+
 </body>
 </html>
